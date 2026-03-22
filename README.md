@@ -1,20 +1,32 @@
-<<<<<<< HEAD
-# React + Vite
+# ✅ TODO App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean and responsive task management app built with React and Vite.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
+👉 [todo-app-kappa-six-49.vercel.app](https://todo-app-kappa-six-49.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- Add, complete and delete tasks
+- Clean and minimal UI
+- Fast performance with Vite
+- Fully responsive design
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Built With
 
-## Expanding the ESLint configuration
+![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# TODO-APP
->>>>>>> 81add86a36230a56ced5207217be24d7fdd4a209
+## 🚀 Getting Started
+```bash
+git clone https://github.com/BereketWorana/TODO-APP.git
+cd TODO-APP
+npm install
+npm run dev
+```
+
+## 👨‍💻 Author
+
+**Bereket Worana** — [github.com/BereketWorana](https://github.com/BereketWorana)
