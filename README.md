@@ -3,7 +3,7 @@
 A clean and responsive task management app built with React and Vite.
 
 ## 🌐 Live Demo
-👉 [todo-app-kappa-six-49.vercel.app](https://todo-app-kappa-six-49.vercel.app)
+👉 [todo-app-kappa-six-49.vercel.app](https://todo-app-emne.vercel.app)
 
 ## ✨ Features
 
