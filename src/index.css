@@ -1,2 +1,18 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #0f172a; }
+@import './styles/theme.css';
+@import './styles/app.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}

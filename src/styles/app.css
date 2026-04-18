@@ -1,0 +1,142 @@
+/* Base Utilities */
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-row { display: flex; align-items: center; }
+.flex-col { display: flex; flex-direction: column; }
+.text-muted { color: var(--muted); }
+.text-acc { color: var(--acc); }
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+.font-medium { font-weight: 500; }
+.text-sm { font-size: 14px; }
+.text-xs { font-size: 12px; }
+
+/* Buttons */
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  display: flex;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.btn-icon:hover {
+  background: var(--bg3);
+  color: var(--acc);
+}
+.btn-icon.danger:hover { color: var(--danger); }
+.btn-icon.success:hover { color: var(--success); }
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--acc);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px var(--acc-glow);
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--acc-glow);
+}
+
+.btn-secondary {
+  padding: 11px 18px;
+  border-radius: 12px;
+  border: 2px solid var(--bdr);
+  background: var(--bg2);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-secondary:hover {
+  border-color: var(--acc);
+  color: var(--acc);
+}
+.btn-secondary.active {
+  border-color: var(--acc);
+  color: var(--acc);
+  background: rgba(99,102,241,0.15);
+}
+
+.btn-danger-outline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.3);
+  border-radius: 10px;
+  padding: 10px 18px;
+  color: var(--danger);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-danger-outline:hover {
+  background: rgba(239,68,68,0.2);
+}
+
+/* Inputs */
+.input-base {
+  background: var(--bg3);
+  border: 2px solid var(--bdr);
+  border-radius: 12px;
+  padding: 14px 18px;
+  color: var(--text);
+  font-size: 15px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+.input-base:focus {
+  border-color: var(--acc);
+}
+
+/* Cards */
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--bdr);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.quest-item {
+  background: var(--bg2);
+  border: 2px solid var(--bdr);
+  border-radius: 16px;
+  transition: all 0.2s;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.quest-item.completed {
+  background: var(--bg3);
+  opacity: 0.6;
+}
+.quest-item.dragging {
+  opacity: 0.5;
+  box-shadow: var(--shadow-lg);
+  cursor: grabbing !important;
+}
+
+/* Utilities */
+.tag {
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
