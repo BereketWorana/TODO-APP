@@ -1,1 +1,101 @@
 /* App specific styles go here */
+
+/* Solo Leveling inspired body styles */
+body {
+  background: radial-gradient(ellipse at top, rgba(167, 139, 250, 0.05) 0%, transparent 60%);
+}
+
+/* Animated neon glow effect */
+@keyframes glow-pulse {
+  0%, 100% {
+    text-shadow: 0 0 10px var(--acc-glow);
+    box-shadow: 0 0 15px var(--acc-glow);
+  }
+  50% {
+    text-shadow: 0 0 20px var(--acc-glow);
+    box-shadow: 0 0 25px var(--acc-glow);
+  }
+}
+
+@keyframes border-glow {
+  0%, 100% {
+    border-color: rgba(167, 139, 250, 0.2);
+    box-shadow: 0 0 10px rgba(167, 139, 250, 0.1);
+  }
+  50% {
+    border-color: rgba(167, 139, 250, 0.4);
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.2);
+  }
+}
+
+/* Quest items animation on hover */
+.quest-item {
+  animation: border-glow 3s ease-in-out infinite;
+}
+
+/* XP reward glow */
+.quest-item span[style*="background"] {
+  transition: all 0.3s ease;
+}
+
+/* Floating animation for navbar title */
+@keyframes float-title {
+  0%, 100% {
+    transform: translateY(0px);
+    text-shadow: 0 0 20px var(--acc-glow);
+  }
+  50% {
+    transform: translateY(-2px);
+    text-shadow: 0 0 30px var(--acc-glow);
+  }
+}
+
+.text-acc {
+  animation: float-title 3s ease-in-out infinite;
+}
+
+/* Enhanced input focus state */
+.input-base:focus {
+  animation: 0.3s ease-out;
+}
+
+/* Completion effect */
+.quest-item.completed {
+  animation: fade-out 0.5s ease-out;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* System badge styling */
+.rank-badge {
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.2), rgba(6, 182, 212, 0.1));
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  box-shadow: 0 0 15px rgba(167, 139, 250, 0.2);
+}
+
+/* Sidebar active item effect */
+.sidebar-item.active {
+  border-left: 3px solid var(--acc);
+  box-shadow: inset -3px 0 10px rgba(167, 139, 250, 0.1);
+}
+
+/* Loading animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.loading {
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
