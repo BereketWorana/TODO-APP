@@ -23,7 +23,25 @@ import { ModalContainer } from './components/modals/ModalContainer';
 
 function App() {
   const { currentScreen } = useUIStore();
+  const { addXP } = useHunterStore();
+  const { pushNotification } = useUIStore();
   useDailyReset();
+  
+  // Konami Code easter egg
+  useKonamiCode(() => {
+    addXP(1000);
+    pushNotification({
+      title: 'SECRET UNLOCKED',
+      message: '+1000 XP Bonus Gained!',
+      type: 'success',
+      duration: 5000,
+    });
+    // Flash gold shimmer
+    document.documentElement.style.filter = 'hue-rotate(40deg) saturate(2)';
+    setTimeout(() => {
+      document.documentElement.style.filter = '';
+    }, 10000);
+  });
   
   // Screen routing
   const renderScreen = () => {
