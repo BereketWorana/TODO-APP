@@ -1,0 +1,249 @@
+/* ⚡ THE SYSTEM — Global Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Background Layers */
+  --bg-void: #030712;
+  --bg-abyss: #0a0f1e;
+  --bg-shadow: #0f172a;
+  --bg-surface: #1e293b;
+  --bg-elevated: #263348;
+
+  /* Accent Colors */
+  --system-blue: #3b82f6;
+  --system-blue-glow: #1d4ed8;
+  --system-purple: #7c3aed;
+  --system-cyan: #06b6d4;
+  --system-gold: #f59e0b;
+  --system-red: #dc2626;
+  --system-green: #10b981;
+  --system-gray: #475569;
+
+  /* Text */
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #475569;
+  --text-system: #60a5fa;
+
+  /* Typography */
+  --font-display: 'Orbitron', monospace, sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+  --font-mono: 'Share Tech Mono', 'Courier New', monospace;
+
+  /* Spacing */
+  --sidebar-width: 240px;
+  --sidebar-collapsed: 48px;
+}
+
+/* ─── Reset & Base ────────────────────────── */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-void);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ─── Custom Scrollbars ───────────────────── */
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--system-blue-glow);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--system-blue);
+}
+
+/* ─── Utility Classes ─────────────────────── */
+
+.glass-panel {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.9) 0%,
+    rgba(30, 41, 59, 0.7) 50%,
+    rgba(15, 23, 42, 0.85) 100%
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow:
+    0 0 30px rgba(59, 130, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.corner-cut {
+  clip-path: polygon(
+    8px 0%, 100% 0%,
+    100% calc(100% - 8px), calc(100% - 8px) 100%,
+    0% 100%, 0% 8px
+  );
+}
+
+.scan-lines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-lines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(59, 130, 246, 0.02) 2px,
+    rgba(59, 130, 246, 0.02) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.text-glow {
+  text-shadow: 0 0 10px currentColor, 0 0 30px currentColor;
+}
+
+.text-glow-strong {
+  text-shadow: 0 0 10px currentColor, 0 0 30px currentColor, 0 0 60px currentColor;
+}
+
+/* ─── Animations ──────────────────────────── */
+
+@keyframes breathe-glow {
+  0%, 100% {
+    text-shadow: 0 0 10px currentColor;
+  }
+  50% {
+    text-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+  }
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(20px, -20px);
+  }
+  50% {
+    transform: translate(0, -40px);
+  }
+  75% {
+    transform: translate(-20px, -20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
+  }
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slide-in-top {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes grid-reveal {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+
+/* ─── Reduced Motion ──────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
