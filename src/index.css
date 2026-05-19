@@ -1,11 +1,5 @@
-@import './styles/theme.css';
-@import './styles/app.css';
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Entry point CSS - all styles imported from globals.css */
+@import './styles/globals.css';
 
 html, body, #root {
   height: 100%;

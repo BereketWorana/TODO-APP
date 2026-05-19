@@ -1,6 +1,3 @@
-// ⚡ THE SYSTEM — Main Application
-// Routes all screens and manages modals
-
 import React, { useEffect } from 'react';
 import { Background } from './components/Background';
 import { DashboardLayout } from './layouts/DashboardLayout';
@@ -22,10 +19,19 @@ import { SettingsScreen } from './screens/Settings';
 import { ModalContainer } from './components/modals/ModalContainer';
 
 function App() {
-  const { currentScreen } = useUIStore();
+  const { currentScreen, openModal } = useUIStore();
   const { addXP } = useHunterStore();
   const { pushNotification } = useUIStore();
+  const { isFirstTime } = useHunterStore();
+  
   useDailyReset();
+  
+  // Show welcome modal on first load
+  useEffect(() => {
+    if (isFirstTime) {
+      openModal('welcome');
+    }
+  }, [isFirstTime, openModal]);
   
   // Konami Code easter egg
   useKonamiCode(() => {
