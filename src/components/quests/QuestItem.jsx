@@ -60,7 +60,10 @@ export default function QuestItem({
     <div ref={setNodeRef} style={style} {...attributes}>
       <div 
         className={`quest-item ${todo.is_completed ? 'completed' : ''} ${isDragging ? 'dragging' : ''}`}
-        style={{ borderLeft: `4px solid ${pColor}` }}
+        style={{ 
+          borderLeft: `4px solid ${pColor}`,
+          boxShadow: `inset 0 0 1px ${pColor}20, 0 0 15px ${pColor}15`
+        }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 14, padding: "16px 20px" }}>
           
@@ -100,7 +103,7 @@ export default function QuestItem({
             {cat.label}
           </span>
           
-          <span style={{ fontSize: 13, fontWeight: 700, color: pColor, flexShrink: 0, background: `${pColor}20`, padding: "5px 10px", borderRadius: 8 }}>
+          <span style={{ fontSize: 13, fontWeight: 700, color: pColor, flexShrink: 0, background: `${pColor}25`, padding: "5px 10px", borderRadius: 8, border: `1px solid ${pColor}40`, boxShadow: `0 0 10px ${pColor}30` }}>
             +{todo.xp_reward || 50}xp
           </span>
           
@@ -122,7 +125,7 @@ export default function QuestItem({
         </div>
         
         {isExpanded && (
-          <div style={{ padding: "0 20px 18px 90px", borderTop: "1px solid var(--bdr)", background: "var(--glass-bg)" }}>
+          <div style={{ padding: "0 20px 18px 90px", borderTop: "1px solid rgba(167, 139, 250, 0.2)", background: "linear-gradient(135deg, rgba(167, 139, 250, 0.03) 0%, rgba(6, 182, 212, 0.02) 100%)" }}>
             
             {questSubtasks.map(subtask => (
               <div key={subtask.id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 0" }}>
