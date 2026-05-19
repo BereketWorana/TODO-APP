@@ -6,8 +6,36 @@ import { useUIStore } from '../store/uiStore';
 import { SidebarNav } from './SidebarNav';
 import { NotificationContainer } from '../components/NotificationContainer';
 
+// Screens
+import { DashboardScreen } from '../screens/Dashboard';
+import { QuestBoardScreen } from '../screens/QuestBoard';
+import { HunterInfoScreen } from '../screens/HunterInfo';
+import { ShadowArmyScreen } from '../screens/ShadowArmy';
+import { AchievementsScreen } from '../screens/Achievements';
+import { SettingsScreen } from '../screens/Settings';
+
 export function DashboardLayout({ children }) {
-  const { sidebarCollapsed, toggleSidebar } = useUIStore();
+  const { sidebarCollapsed, currentScreen } = useUIStore();
+  
+  // Render the correct screen based on currentScreen state
+  const renderScreen = () => {
+    switch (currentScreen) {
+      case 'dashboard':
+        return <DashboardScreen />;
+      case 'quests':
+        return <QuestBoardScreen />;
+      case 'hunter':
+        return <HunterInfoScreen />;
+      case 'shadows':
+        return <ShadowArmyScreen />;
+      case 'achievements':
+        return <AchievementsScreen />;
+      case 'settings':
+        return <SettingsScreen />;
+      default:
+        return <DashboardScreen />;
+    }
+  };
   
   return (
     <div
@@ -40,7 +68,7 @@ export function DashboardLayout({ children }) {
           overflow: 'hidden',
         }}
       >
-        {children}
+        {renderScreen()}
       </main>
       
       {/* Notifications */}
